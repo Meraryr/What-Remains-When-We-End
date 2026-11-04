@@ -24,7 +24,7 @@ for i,(id,label) in enumerate(zip(ids,labels)):
         cls='statement' if blocks[j].startswith('**') and blocks[j].endswith('**') else ''
         if j==2: cls+=' lead'
         if j==len(blocks)-1: cls+=' final-question'
-        if j==84: paras.append('<img class="closing-art" src="assets/galaxy.webp" width="680" height="350" alt="Spiral galaxy from the original transformation artwork." loading="lazy">')
+        if blocks[j].startswith('We began by asking what survives an individual.'): paras.append('<img class="closing-art" src="assets/galaxy.webp" width="680" height="350" alt="Spiral galaxy from the original transformation artwork." loading="lazy">')
         paras.append(f'<p class="{cls.strip()}" data-paragraph="{j}">{inline(blocks[j])}</p>')
     sections.append(f'''<section class="movement movement-{i+1}" id="{id}" aria-label="{label}">
     <div class="movement-marker" aria-hidden="true"><span>{i+1:02} / 05</span><span>{label}</span></div>
